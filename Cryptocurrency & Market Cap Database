@@ -1,0 +1,28 @@
+--Create A Cryptocurrency & Market Cap Database
+
+CREATE TABLE cryptomarketcap ("Rank" INT, "Name" TEXT, "Symbol" TEXT,
+"Market Cap" BIGINT,"Price" INT, "Circulating Supply" BIGINT)
+
+INSERT INTO cryptomarketcap ("Rank","Name","Symbol","Market Cap","Price","Circulating Supply")
+            VALUES(1,'Bitcoin','BTC', 403112749592, 20869, 19315568),
+                  (2,'Ethereum','ETH', 186320586355, 1522, 122373866),
+                  (3,'Tether','USDT', 72752531280, 1, 72116708665),
+                  (4,'BNB','BNB', 45317147118, 287, 157892653),
+                  (5,'USD Coin','USDC', 40258601259, 1, 40638162374),
+                  (6,'XRP','XRP', 18841430889, 0.3, 50950912949),
+                  (7,'Cardano','ADA', 11389655973, 0.3, 34695167231),
+                  (8,'Polygon','MATIC', 9880921203, 1, 8734317475),
+                  (9,'Dogecoin','DOGE', 9362315505, 0.7, 132670764300),
+                  (10,'Binance USD','BUSD', 8414134280, 1, 8375923988)
+                  
+--Display the database ordered by price.  
+SELECT *
+FROM cryptomarketcap
+ORDER BY Price Desc;
+
+--What are the most 5 expensive cryptos?
+SELECT *
+FROM cryptomarketcap 
+ORDER BY Price DESC
+LIMIT 5
+
